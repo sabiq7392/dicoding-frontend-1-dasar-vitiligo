@@ -1,0 +1,68 @@
+$primary-color: #CD916C
+$brownDark-color: #A9683F
+$dark-color: #333
+$light-color: #f2f2f2
+
+@media screen and (max-width: 1199px) 
+    nav, .jumbotron 
+        max-width: 960px
+    
+    .jumbotron .heroImage img 
+        width: 350px!important
+
+@media screen and (max-width: 991px) 
+    nav, .jumbotron 
+        
+    nav
+        
+        z-index: 1
+        position: relative
+        ul 
+            justify-content: center
+            flex-direction: column
+            box-shadow: 0px 1px 1px rgba(0,0,0,0.1)
+            position: absolute
+            top: 0
+            z-index: 1
+            width: 100vw
+            height: 70vh
+            transition: 1000ms
+            // animation: showNav 500ms
+            background-color: #c4c4c4
+            li 
+                text-align: center
+                padding: 1em
+                a 
+                    font-size: 25px 
+                    text-align: center
+                    color: $light-color
+                
+                .line
+                    display: none
+                
+                .crossNav
+                    display: flex
+                    justify-content: center
+
+    .humburger 
+        display: block!important
+    
+    .humburger:checked ~ nav ul li 
+        display: block
+    
+    h1 
+        font-size: 96px!important
+
+    .kiri
+        order: 2
+
+// @media screen and (max-width: 914px) 
+    
+        
+@media screen and (max-width: 767px) 
+    nav, .jumbotron 
+
+@media screen and (max-width: 575px) 
+    nav, .jumbotron 
+        max-width: none
+    

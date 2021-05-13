@@ -1,0 +1,205 @@
+$primary-color: #CD916C
+$brownDark-color: #A9683F
+$dark-color: #333
+$light-color: #f2f2f2
+
+* 
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+html 
+    scroll-behavior: smooth
+
+body 
+    font-family: 'Quicksand', sans-serif
+
+header 
+    background-color: #c4c4c4
+
+nav 
+    display: flex
+    justify-content: center
+    margin: auto
+    padding: 10px
+    ul 
+        display: flex
+        list-style: none
+        li 
+            padding: 0.5em 1.5em
+            &:hover .line
+                width: 100%
+
+            a 
+                transition: 200ms
+                font-size: 18px
+                font-weight: 500
+                text-decoration: none
+                color: $light-color
+                &:hover
+                    color: $primary-color!important
+
+            a.active 
+                font-weight: bold
+                color: $primary-color
+
+            .line 
+                transition: width 200ms
+                width: 0px
+                height: 2px
+                background-color: $primary-color
+
+            .crossNav
+                display: none
+                position: relative
+                cursor: pointer
+                .cross
+                    background-color: $light-color
+                    height: 10px
+                    width: 50px
+                    border-radius: 15%
+
+                .cross:nth-child(1)
+                    transform: rotate(-45deg)
+                    
+                .cross:nth-child(2)
+                    position: absolute
+                    top: -1px
+                    transform: rotate(45deg)
+                
+                &:hover
+                    .cross
+                        filter: brightness(95%)
+        
+        li:nth-child(1) 
+            margin-bottom: 4em 
+            
+    .humburger 
+        display: none
+        position: relative
+        margin-left: auto
+        cursor: pointer
+        .line-wrapper 
+            .line 
+                width: 25px
+                height: 4px
+                transition: width 500ms
+                border-radius: 15%
+                background-color: $light-color
+
+            .line:nth-child(2) 
+                margin: 7px 0
+
+        input 
+            transform: translateY(-19px) translateX(6px)
+            position: absolute
+            z-index: 1
+
+        &:hover
+            .line-wrapper 
+                .line:nth-child(1), .line:nth-child(3) 
+                    width: 15px
+
+        
+/* ============================================ */
+
+.jumbotron 
+    background-color: #c4c4c4
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    max-width: 1200px
+    margin: auto
+    .heroTitle, .heroImage
+        display: flex
+        justify-content: center
+        flex-grow: 1
+
+    .heroTitle
+        text-align: center
+        flex-direction: column
+        p 
+            font-weight: 600
+            color: $light-color
+
+    .heroImage
+        img 
+            filter: drop-shadow(15px 0px 20px rgba(0, 0, 0, 0.2))
+            width: 400px
+
+    .button-slider 
+        position: absolute
+        bottom: 10px
+        display: flex
+        .button-wrapper 
+            display: flex
+            .button 
+                height: 15px
+                width: 15px
+                border-radius: 100%
+                border: 3px solid $primary-color
+                transition: background-color 200ms
+
+            input 
+                opacity: 0
+                position: absolute
+                z-index: 2
+            input:checked ~ .button 
+                background-color: $primary-color
+
+        .button-wrapper:nth-child(2) 
+            margin: 0 10px
+
+nav, .jumbotron 
+    max-width: 1140px
+    margin: 0 auto
+
+h1 
+    color: $light-color
+    font-weight: bold
+    font-size: 120px
+
+h2 
+    color: var(--dark-color)
+    font-size: 72px
+    font-weight: bold
+
+h3 
+    font-size: 36px
+    font-weight: bold
+
+p 
+    line-height: 175%
+    font-size: 16px
+
+.d-flex 
+    display: flex!important
+
+.d-none
+    display: none
+
+.p-1 
+    padding: 1em
+
+.hideNav
+    animation: hideNav 2s
+    
+@keyframes showNav 
+    0% 
+       top: -100px
+    
+    100% 
+        top:  0
+
+@keyframes hideNav
+    0%
+        top: 0
+        
+    100%
+        top: -500px
+
+
+@import  "mediaQuaries.sass"
+    
