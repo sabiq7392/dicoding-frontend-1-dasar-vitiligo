@@ -1,12 +1,21 @@
-$primary-color: #CD916C
-$brownDark-color: #A9683F
+$primary-color: #A9683F
+$brownLight-color: #FFE2D1
+$brownMedium-color: #CD916C
+$brownDark-color: #BE7E57
 $dark-color: #333
 $light-color: #f2f2f2
+$purple-color: #9F3C4C
+$margin-small: 15px
+$margin-medium: 30px
+$margin-large: 45px
+$debug: 1px solid red
 
 * 
     padding: 0
     margin: 0
     box-sizing: border-box
+    text-decoration: none
+    list-style: none
 
 html 
     scroll-behavior: smooth
@@ -14,95 +23,84 @@ html
 body 
     font-family: 'Quicksand', sans-serif
 
-header 
+.header-web
     background-color: #c4c4c4
 
+// ================ Navbar ==================
 nav 
+    padding: 1em
     display: flex
     justify-content: center
-    margin: auto
-    padding: 10px
+    z-index: 1
     ul 
         display: flex
         list-style: none
+        height: 27px
         li 
-            padding: 0.5em 1.5em
             &:hover .line
                 width: 100%
 
             a 
-                transition: 200ms
+                transition: 400ms
+                padding: 1em
                 font-size: 18px
                 font-weight: 500
                 text-decoration: none
                 color: $light-color
                 &:hover
+                    font-weight: bold
                     color: $primary-color!important
 
-            a.active 
-                font-weight: bold
-                color: $primary-color
-
             .line 
-                transition: width 200ms
+                transition: width 400ms
                 width: 0px
                 height: 2px
                 background-color: $primary-color
 
-            .crossNav
-                display: none
-                position: relative
-                cursor: pointer
-                .cross
-                    background-color: $light-color
-                    height: 10px
-                    width: 50px
-                    border-radius: 15%
+            // .crossNav
+            //     display: none
+            //     position: relative
+            //     cursor: pointer
+            //     &:hover
+            //         .cross
+            //             filter: brightness(95%)
 
-                .cross:nth-child(1)
-                    transform: rotate(-45deg)
-                    
-                .cross:nth-child(2)
-                    position: absolute
-                    top: -1px
-                    transform: rotate(45deg)
+            //     .cross
+            //         background-color: $light-color
+            //         height: 10px
+            //         width: 50px
+            //         border-radius: 15%
+            //         &:nth-child(1)
+            //             transform: rotate(-45deg)
+                        
+            //         &:nth-child(2)
+            //             position: absolute
+            //             top: -1px
+            //             transform: rotate(45deg)
                 
-                &:hover
-                    .cross
-                        filter: brightness(95%)
-        
-        li:nth-child(1) 
-            margin-bottom: 4em 
-            
     .humburger 
         display: none
         position: relative
         margin-left: auto
         cursor: pointer
+        z-index: 5
         .line-wrapper 
             .line 
                 width: 25px
                 height: 4px
-                transition: width 500ms
+                transition: width 400ms
                 border-radius: 15%
                 background-color: $light-color
-
-            .line:nth-child(2) 
-                margin: 7px 0
+                &:nth-child(2) 
+                    margin: 7px 0
 
         input 
             transform: translateY(-19px) translateX(6px)
             position: absolute
             z-index: 1
 
-        &:hover
-            .line-wrapper 
-                .line:nth-child(1), .line:nth-child(3) 
-                    width: 15px
 
-        
-/* ============================================ */
-
+// ================ Jumbotron ==================
 .jumbotron 
     background-color: #c4c4c4
     position: relative
@@ -110,96 +108,325 @@ nav
     flex-wrap: wrap
     justify-content: center
     align-items: center
-    max-width: 1200px
-    margin: auto
-    .heroTitle, .heroImage
+    height: 526px
+    .heroTitle, 
+    .heroImage
+        z-index: 0
         display: flex
-        justify-content: center
+        position: relative
         flex-grow: 1
 
+    .heroImage
+        justify-content: end
+        transition: 400ms
+        animation: move-to-right 1s
+        &:nth-child(2), &:nth-child(3)
+            display: none
+
+        img 
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2))
+            width: 350px
+
     .heroTitle
+        justify-content: center
         text-align: center
         flex-direction: column
         p 
             font-weight: 600
             color: $light-color
 
-    .heroImage
-        img 
-            filter: drop-shadow(15px 0px 20px rgba(0, 0, 0, 0.2))
-            width: 400px
-
     .button-slider 
         position: absolute
-        bottom: 10px
+        bottom: 15px
         display: flex
         .button-wrapper 
             display: flex
+            &:nth-child(2) 
+                margin: 0 10px
+
             .button 
                 height: 15px
                 width: 15px
                 border-radius: 100%
-                border: 3px solid $primary-color
-                transition: background-color 200ms
+                border: 4px solid $primary-color
+                transition: background-color 100ms
 
             input 
                 opacity: 0
                 position: absolute
                 z-index: 2
-            input:checked ~ .button 
-                background-color: $primary-color
+                &:checked ~ .button 
+                    background-color: $primary-color
 
-        .button-wrapper:nth-child(2) 
-            margin: 0 10px
+       
+// ================ Main ==================
+main 
+    .main-wrapper
+        display: flex
+        flex-wrap: wrap
+        .content
+            border: 1px solid $light-color
+            flex-basis: 75%
+            flex-grow: 1
+            .apa-itu-vitiligo
+                background-color: $light-color
+                .background
+                    position: absolute
+                    right: 0
+                    bottom: 0
+                    z-index: 0
+                
+                .paragraf, h2
+                    margin-bottom: $margin-medium
+                    
+                .galeri
+                    display: flex
+                    justify-content: center
+                    flex-wrap: wrap
+                    z-index: 1
+                    position: relative
+                    .foto-wrapper
+                        padding: 0.5em
+                        img
+                            border-radius: 5px
+                            width: 200px
 
-nav, .jumbotron 
-    max-width: 1140px
+                .paragraf, .galeri
+                    z-index: 1
+                    position: relative
+
+            .tentang
+                background-color: $brownDark-color
+                ul  li
+                    &::before
+                        content: "\2022"
+                        color: $light-color
+                        font-size: 30px
+                        margin-right: $margin-small
+
+                    a
+                        color: $light-color
+                        font-size: 24px
+                        font-weight: bold
+                        &:hover
+                            text-decoration: underline
+            
+            .fakta
+                background-color: $brownMedium-color
+                p
+                    color: $light-color
+                    font-weight: 500
+
+            .support
+                .image-support-wrapper
+                    &:nth-child(2) .support-image
+                        width: 280px!important
+
+                    .support-image
+                        display: block
+                        margin: auto
+                        width: 400px
+                        border-radius: 80%
+                        
+                    .support-caption
+                        margin-top: $margin-small 
+                        text-align: center
+                        font-size: 28px
+                        font-weight: bold
+                        color: $brownMedium-color
+                        span
+                            color: $purple-color
+
+
+            .apa-itu-vitiligo, 
+            .tentang, 
+            .fakta,
+            .support
+                padding: 4em
+                position: relative
+                z-index: 0
+
+            .tentang h2, 
+            .fakta h2
+                font-size: 36px 
+                color: $light-color
+                margin-bottom: $margin-medium 
+
+
+        // ================ Aside ==================
+        aside
+            flex-basis: 25%
+            padding: 4em 0  
+            flex-grow: 1
+            .aside-wrapper 
+                text-align: center
+                .ahli
+                    padding: 2em
+                .aside-image
+                    width: 200px
+                    border-radius: 50%
+                
+                .nama
+                    margin-top: $margin-small
+                    margin-bottom: $margin-medium
+                    font-weight: 600
+                    span
+                        color: $purple-color
+
+                .aside-button
+                    padding: 0.625em 4em
+                    border-radius: 5px
+                    color: white
+                    font-weight: bold
+                    background-color: $purple-color
+                    transition: 200ms
+                    &:hover 
+                        box-shadow: 0px 4px 5px rgba(0,0,0,0.2)
+                    &:active
+                        filter: brightness(90%)
+                
+                .aside-dev
+                    margin-top: $margin-small
+
+footer
+    bottom: 0
+    .thanks
+        padding: 3em 4em
+        background-color: $brownMedium-color
+        h2
+            color: $light-color
+            font-size: 24px
+            margin-bottom: $margin-medium 
+
+        ul li 
+            padding: 0.2em
+            a
+                color: $light-color   
+                font-size: 18px  
+                &:hover
+                    text-decoration: underline 
+
+    .end-of-the-web
+        background-color: $brownDark-color
+        .footer-color
+            padding: 1em 4em
+            display: flex
+            a, p
+                color: $light-color
+                font-size: 18px
+                font-weight: bold
+            a
+                margin: auto
+                transition: 200ms
+                &:hover
+                    color: $purple-color
+    
+            
+// ================ another ==================
+nav, 
+.jumbotron, 
+.main-wrapper,
+.footer-color
     margin: 0 auto
+    max-width: 1200px
+
+hr
+    width: 80%
+    margin: auto
+    opacity: 0.1
 
 h1 
     color: $light-color
     font-weight: bold
     font-size: 120px
+    span
+        color: $primary-color
 
-h2 
-    color: var(--dark-color)
+.what-is
     font-size: 72px
+h2 
+    color: $dark-color
     font-weight: bold
 
 h3 
-    font-size: 36px
-    font-weight: bold
+    font-size: 25px
 
 p 
     line-height: 175%
     font-size: 16px
 
+.active 
+    font-weight: bold
+    color: $primary-color
+    
+.p-1 
+    padding: 1em
+
 .d-flex 
     display: flex!important
 
 .d-none
-    display: none
-
-.p-1 
-    padding: 1em
+    display: none!important
 
 .hideNav
-    animation: hideNav 2s
-    
+    animation: hideNav 400ms!important
+
+.showNav 
+    animation: showNav 400ms!important
+
+.invert-rotated
+    transition: 100ms!important
+    transform: rotate(-45deg)
+    width: 30px!important
+
+.rotated
+    transition: 100ms!important
+    transform: rotate(45deg)
+    top: 0
+    position: absolute
+    width: 30px!important
+
+.humUp
+    top: 10px
+
 @keyframes showNav 
     0% 
-       top: -100px
+        opacity: 0
+        top: -500px
+    
+    90% 
+        opacity: 1
     
     100% 
         top:  0
 
 @keyframes hideNav
     0%
-        top: 0
+        right: 0
         
     100%
-        top: -500px
+        right: -1000px
 
+@keyframes move-to-right
+    0%
+        opacity: 0
+        left: -500px
+
+    50%
+        opacity: 0
+
+    90% 
+        opacity: 1
+    
+    100%
+        left: 0
+
+@keyframes move-to-left
+    0%
+        right: -500px
+        
+    100%
+        right: 0px
 
 @import  "mediaQuaries.sass"
     

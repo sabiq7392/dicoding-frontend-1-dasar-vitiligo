@@ -5,84 +5,183 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/mediaQuaries.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
     <title>Dicoding Tugas Akhir</title>
 </head>
 <body>
-    <header>
+    <header class="header-web">
         <nav>
             <ul id="nav-link-wrapper">
-                <li>
+                <!-- <li>
                     <div class="crossNav">
                         <div class="cross"></div>
                         <div class="cross"></div>
                     </div>
-                </li>
+                </li> -->
                 <li>
                     <a href="index.html" class="active">Beranda</a>
                     <div class="line"></div>
                 </li>
                 <li>
-                    <a href="">Tentang</a>
+                    <a href="#tentang">Tentang</a>
                     <div class="line"></div>
                 </li>
                 <li>
-                    <a href="">Komunitas</a>
+                    <a href="https://www.facebook.com/groups/145139635531447">Komunitas</a>
                     <div class="line"></div>
                 </li>
             </ul>
             <div class="humburger">
                 <div class="line-wrapper">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+                    <div class="line" id="hum-satu"></div>
+                    <div class="line" id="hum-dua"></div>
+                    <div class="line" id="hum-tiga"></div>
                 </div>
                 <!-- <input type="checkbox" name="humburger" id="hum-check"> -->
             </div>
         </nav>
+
         <div class="jumbotron">
-                <div class="heroImage">
-                    <img src="assets/img/viti-2.png" alt="">
-                </div>
-                <div class="heroTitle">
-                    <h1>VITILIGO</h1>
+            <div class="heroImage" id="firstImage">
+                <img src="assets/img/viti-2.png" alt="">
+            </div>
+            <div class="heroImage" id="secondImage">
+                <img src="assets/img/hero-1.png" alt="">
+            </div>
+            <div class="heroImage" id="thirdImage">
+                <img src="assets/img/hero-3.png" alt="">
+            </div>
+
+            <div class="heroTitle">
+                <section>
+                    <h1><span>VITI</span>LIGO</h1>
                     <p>
                         Mari kita pelajari apa itu Vitiligo dan bantu support teman-teman kita yang <br>
                         mengidap penyakit ini
                     </p>
+                </section>
+            </div>
+
+            <div class="button-slider">
+                <div class="button-wrapper">
+                    <input type="radio" name="slide" checked id="firstSlide">
+                    <div class="button"></div>
                 </div>
 
-                <div class="button-slider">
-                    <div class="button-wrapper">
-                        <input type="radio" name="slide" checked>
-                        <div class="button"></div>
-                    </div>
+                <div class="button-wrapper">
+                    <input type="radio" name="slide" id="secondSlide">
+                    <div class="button"></div>
+                 </div>
 
-                    <div class="button-wrapper">
-                        <input type="radio" name="slide">
-                        <div class="button"></div>
-                    </div>
-
-                    <div class="button-wrapper">
-                        <input type="radio" name="slide">
-                        <div class="button"></div>
-                    </div>
-                </div> <!-- Button Slider -->
+                <div class="button-wrapper">
+                    <input type="radio" name="slide" id="thirdSlide">
+                    <div class="button"></div>
+                </div>
+            </div> <!-- Button Slider -->
         </div> <!-- Jumbotron -->
     </header>
 
     <main>
-        
+        <div class="main-wrapper">
+            <div class="content">
+                <article class="apa-itu-vitiligo">
+                    <img src="assets/img/Background.svg" alt="" class="background">
+                    <section class="paragraf">
+                        <h2 class="what-is">Apa itu Vitiligo?</h2>
+                        <p>
+                            penyakit yang menyebabkan hilangnya warna kulit dalam bentuk bercak dikarenakan sistem kekebalan tubuh menyerang dan menghancurkan sel-sel tubuh yang sehat, termasuk sel pigmen tubuh.
+                            <br><br>
+                            Vitiligo tergolong penyakit yang berlangsung jangka panjang (kronis), dan diperkirakan menimpa 1 dari 100 orang. Meskipun dapat menyerang semua orang, vitiligo umumnya terjadi sebelum usia 20 tahun, dan lebih jelas terlihat pada orang yang berkulit hitam.
+                        </p>
+                    </section>
+                    <div class="galeri">
+                        <div class="foto-wrapper"><img src="assets/img/wajah.jpg" alt=""></div>
+                        <div class="foto-wrapper"><img src="assets/img/seluruh-tubuh.jpg" alt=""></div>
+                        <div class="foto-wrapper"><img src="assets/img/tangan.jpg" alt=""></div>
+                    </div>
+                </article>
+
+                <article class="tentang" id="tentang">
+                    <h2>Baca lagi tentang Vitiligo</h1>
+                    <ul>
+                        <li><a href="">Penyebab</a></li>
+                        <li><a href="">Gejala</a></li>
+                        <li><a href="">Diagnosis</a></li>
+                        <li><a href="">Pengobatan</a></li>
+                        <li><a href="">Obat-obatan</a></li>
+                    </ul>
+                </article>
+
+                <article class="fakta">
+                    <h2>Fakta</h2>
+                    <p>Michael Jackson penyanyi pop terkenal dari Amerika mengidap penyakit Vitiligo dan tanggal Kematiannya 25 Juni diperingati sebagai hari Vitiligo sedunia</p>
+                </article>
+
+                <article class="support">
+                    <figure class="image-support-wrapper">
+                        <img src="assets/img/viti-tiga.png" alt="" class="support-image">
+                        <figcaption class="support-caption">We’re all equals, i’m a still human not monster, my skin will not hurt you</figcaption>
+                    </figure>
+                    <figure class="image-support-wrapper">
+                        <img src="assets/img/viti-dua.png" alt="" class="support-image">
+                        <figcaption class="support-caption">Rayakan hari peringatan Vitiligo sedunia pada tanggal <span>25 Juni</span> untuk selalu support teman-teman kita yang mengidap Vitiligo</figcaption>
+                    </figure>
+                </article>
+            </div> <!-- Content -->
+            
+
+            <aside>
+                <article class="aside-wrapper">
+                    <section class="aside-ahli">
+                        <h2>Tanyakan Ahli</h2>
+                        <div class="ahli">
+                            <img src="assets/img/drRizka.jpg" alt="Dr. Rizka Ayu Lestari" class="aside-image">
+                            <p class="nama">dr. Rizka Ayu Lestari, Sp.KK <br> <span> Dokter Kulit</span></p>
+                            <a href="" class="aside-button">Tanyakan</a>
+                        </div>
+                        <hr>
+                        <div class="ahli">
+                            <img src="assets/img/drHana.jpg" alt="Dr. Hannah" class="aside-image">
+                            <p class="nama">dr. Hannah, Sp.KK <br> <span> Dokter Kulit</span></p>
+                            <a href="" class="aside-button">Tanyakan</a>
+                        </div>
+                    </section> <!-- Aside Ahli -->
+                    <hr>
+                    <section class="aside-dev">
+                        <h2>Website Developer</h2>
+                        <div class="ahli">
+                            <img src="assets/img/saya.png" alt="Sabiq Muhammad" class="aside-image">
+                            <p class="nama">Sabiq Muhammad Antebing Mame</p>
+                            <a href="https://api.whatsapp.com/send?phone=6285693404051" class="aside-button">Kontak</a>
+                        </div>
+                    </section> <!-- Aside Dev -->
+                </article> <!-- Aside Wrapper -->
+            </aside>
+        </div> <!-- Wrapper Main -->
     </main>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="thanks">
+                <div class="footer-color">
+                    <h2>BIG THANKS TO</h2>
+                    <ul>
+                        <li><a href="https://www.alodokter.com/">Alodokter</a></li>
+                        <li><a href="https://www.pexels.com/id-id/">Pexels</a></li>
+                        <li><a href="https://unsplash.com/">Unsplash</a></li>
+                    </ul>
+                </div>
+            </div>
 
-
-
-
-
-    <aside></aside>
-    <footer></footer>
+            <div class="end-of-the-web">
+                <div class="footer-color">
+                    <p>#We'reEquals #Vitiligians</p>
+                    <a href="https://www.instagram.com/ssabiqmame/">Made by Sabiq Mame</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
     <script src="assets/js/index.js"></script>
 </body>
 </html>

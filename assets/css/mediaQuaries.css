@@ -2,9 +2,6 @@
   nav, .jumbotron {
     max-width: 960px;
   }
-  .jumbotron .heroImage img {
-    width: 350px !important;
-  }
 }
 
 @media screen and (max-width: 991px) {
@@ -13,6 +10,7 @@
     position: relative;
   }
   nav ul {
+    display: none;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -26,17 +24,15 @@
     top: 0;
     z-index: 1;
     width: 100vw;
-    height: 70vh;
-    -webkit-transition: 1000ms;
-    transition: 1000ms;
-    background-color: #c4c4c4;
+    height: 100vh;
+    background: #c4c4c4;
   }
   nav ul li {
     text-align: center;
     padding: 1em;
   }
   nav ul li a {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     color: #f2f2f2;
   }
@@ -51,19 +47,70 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .humburger {
+  nav .humburger {
     display: block !important;
   }
-  .humburger:checked ~ nav ul li {
-    display: block;
+  .jumbotron .heroImage {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .what-is {
+    font-size: 62px !important;
   }
   h1 {
-    font-size: 96px !important;
+    font-size: 96px;
   }
+}
+
+@media screen and (max-width: 924px) {
   .kiri {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+  }
+  .jumbotron {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .jumbotron .heroTitle {
+    background-color: #CD916C !important;
+    padding: 2em;
+    height: 230px;
+  }
+  .jumbotron .heroTitle h1, .jumbotron .heroTitle p {
+    color: #333;
+  }
+  .jumbotron .button-slider {
+    bottom: 255px;
+  }
+  .jumbotron .button-slider .button-wrapper .button {
+    border: 4px solid #333 !important;
+  }
+  .jumbotron .button-slider input:checked ~ .button {
+    background-color: #333 !important;
+  }
+  h1 span {
+    color: #f2f2f2;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main .main-wrapper .content .support .image-support-wrapper .support-image {
+    display: block;
+    margin: auto;
+    width: 300px !important;
+    border-radius: 80%;
+  }
+  main .main-wrapper .content .support .image-support-wrapper .support-caption {
+    font-size: 28px;
+  }
+  .what-is {
+    font-size: 42px !important;
+  }
+  h1 {
+    font-size: 72px !important;
   }
 }
 

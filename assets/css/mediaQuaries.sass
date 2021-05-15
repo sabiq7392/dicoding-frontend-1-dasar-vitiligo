@@ -1,23 +1,23 @@
 $primary-color: #CD916C
+$brownLight-color: #FFE2D1
 $brownDark-color: #A9683F
 $dark-color: #333
 $light-color: #f2f2f2
 
 @media screen and (max-width: 1199px) 
-    nav, .jumbotron 
+    nav, .jumbotron
         max-width: 960px
+
     
-    .jumbotron .heroImage img 
-        width: 350px!important
 
 @media screen and (max-width: 991px) 
-    nav, .jumbotron 
+    .jumbotron .heroImage img 
         
     nav
-        
         z-index: 1
         position: relative
         ul 
+            display: none
             justify-content: center
             flex-direction: column
             box-shadow: 0px 1px 1px rgba(0,0,0,0.1)
@@ -25,15 +25,15 @@ $light-color: #f2f2f2
             top: 0
             z-index: 1
             width: 100vw
-            height: 70vh
-            transition: 1000ms
+            height: 100vh
+            // transition: 400ms
             // animation: showNav 500ms
-            background-color: #c4c4c4
+            background: #c4c4c4
             li 
                 text-align: center
                 padding: 1em
                 a 
-                    font-size: 25px 
+                    font-size: 30px 
                     text-align: center
                     color: $light-color
                 
@@ -43,24 +43,62 @@ $light-color: #f2f2f2
                 .crossNav
                     display: flex
                     justify-content: center
-
-    .humburger 
-        display: block!important
+        .humburger 
+            display: block!important
     
-    .humburger:checked ~ nav ul li 
-        display: block
+    .jumbotron .heroImage
+        justify-content: center
+
+    .what-is
+        font-size: 62px!important
     
     h1 
-        font-size: 96px!important
+        font-size: 96px
+    
 
+@media screen and (max-width: 924px) 
     .kiri
         order: 2
-
-// @media screen and (max-width: 914px) 
     
+    .jumbotron
+        height: fit-content!important
+        .heroTitle
+            background-color: $primary-color!important
+            padding: 2em
+            height: 230px
+            h1, p 
+                color: $dark-color
+
+        .button-slider 
+            bottom: 255px
+            .button-wrapper 
+                .button 
+                    border: 4px solid $dark-color!important
+                        
+            input:checked ~ .button 
+                background-color: $dark-color!important
+    
+    h1
+        span
+            color: $light-color
+        
         
 @media screen and (max-width: 767px) 
-    nav, .jumbotron 
+    main  .main-wrapper .content .support .image-support-wrapper 
+        .support-image
+            display: block
+            margin: auto
+            width: 300px!important
+            border-radius: 80%
+        
+        .support-caption
+            font-size: 28px
+                
+    .what-is
+        font-size: 42px!important
+
+    h1 
+        font-size: 72px!important
 
 @media screen and (max-width: 575px) 
     nav, .jumbotron 
