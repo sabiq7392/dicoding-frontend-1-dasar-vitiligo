@@ -99,29 +99,3 @@ buttonSlide[2].addEventListener("click", function(){
 
 
 
-    // for (let manyClick = 0; manyClick <= 2; manyClick++) {
-    //     if (manyClick == 1) {
-    //         nav.classList.add("d-flex");
-    //         manyClick--;
-    //         console.log(manyClick)
-    //     }
-    // }
-
-// cross.addEventListener("click", function() {
-//     if (nav.classList.contains("showNav") && nav.classList.contains("d-flex")) {
-//         nav.classList.remove("showNav");
-//         nav.classList.add("hideNav");
-//     }
-    // nav.addEventListener("transitionend", function(e) { 
-    //     if (nav.classList.contains("d-flex")) {
-    //         nav.classList.remove("d-flex");
-    //         nav.classList.add("d-none");
-    //     }
-    // })
-// });
-
-
-// if (mediaQuariesXL.matches) {
-//     nav.style.display = "flex";
-// }
-

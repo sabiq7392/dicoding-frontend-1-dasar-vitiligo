@@ -379,10 +379,6 @@ main .main-wrapper aside .aside-wrapper .aside-dev {
   margin-top: 15px;
 }
 
-footer {
-  bottom: 0;
-}
-
 footer .thanks {
   padding: 3em 4em;
   background-color: #CD916C;
@@ -420,7 +416,7 @@ footer .end-of-the-web .footer-color {
 
 footer .end-of-the-web .footer-color a, footer .end-of-the-web .footer-color p {
   color: #f2f2f2;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 
